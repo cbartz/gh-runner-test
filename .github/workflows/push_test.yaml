@@ -1,0 +1,12 @@
+name: Push Event Tests
+
+on:
+  push:
+
+jobs:
+  push-event-tests:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - name: Echo runner name
+        run: |
+          echo "Hello, world"
