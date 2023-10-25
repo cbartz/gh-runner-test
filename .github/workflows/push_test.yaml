@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Echo runner name
         run: |
-          echo "Hello, world"
+          echo "Hello, world again"
