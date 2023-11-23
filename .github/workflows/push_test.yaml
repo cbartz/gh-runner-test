@@ -10,3 +10,6 @@ jobs:
       - name: Echo runner name
         run: |
           echo "Hello, world again"
+      - name: Sleep for 1 hour
+        run: |
+          sleep 3600
