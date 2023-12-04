@@ -7,6 +7,7 @@ jobs:
   push-event-tests:
     runs-on: [self-hosted, linux, x64]
     steps:
-      - name: Echo runner name
+      - name: Fail
         run: |
-          echo "Hello, world again and again"
+            echo "This job should fail"
+            exit 1
