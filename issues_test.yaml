@@ -1,0 +1,13 @@
+name: Issues Event Test
+
+on:
+  issues:
+    types: [opened, reopened, edited, closed]
+
+jobs:
+    issues-event-tests:
+        runs-on: [self-hosted, linux, x64, edge]
+        steps:
+        - name: Echo runner name
+          run: |
+            echo "Hello, world"
