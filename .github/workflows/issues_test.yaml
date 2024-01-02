@@ -6,7 +6,7 @@ on:
 
 jobs:
     issues-event-tests:
-        runs-on: [self-hosted, linux, x64, edge]
+        runs-on: [self-hosted, linux, x64]
         steps:
         - name: Echo runner name
           run: |
