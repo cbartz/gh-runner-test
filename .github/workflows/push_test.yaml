@@ -14,7 +14,8 @@ jobs:
           microk8s-addons: dns ingress rbac storage
           channel: 1.29-strict/stable
           juju-channel: 3.1/stable
+          container-registry-url:  http://localhost:5000
       - name: Echo runner name
         run: |
-          echo "$UID"
-          ls /var/snap/microk8s/current/args/certs.d/docker.io/hosts.toml
+          echo "Hello, world"
+
