@@ -7,6 +7,9 @@ jobs:
   push-event-tests:
     runs-on: ubuntu-latest
     steps:
+      - name: Switch to root
+        run: |
+            sudo -i
       - name: Setup operator environment
         uses: charmed-kubernetes/actions-operator@main
         with:
