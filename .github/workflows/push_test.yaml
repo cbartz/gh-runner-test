@@ -4,8 +4,8 @@ on:
   push:
 
 jobs:
-  push-event-tests:
-    runs-on: [self-hosted, linux, x64]
+  push-tests:
+    runs-on: [self-hosted, linux, x64, flavor1]
     steps:
       - name: Echo runner name
         run: |
