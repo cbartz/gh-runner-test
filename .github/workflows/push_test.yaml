@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-tests:
-    runs-on: [self-hosted, linux, x64, app1-flavor]
+    runs-on: [self-hosted, linux, x64, app1/0-flavor]
     steps:
       - name: Echo runner name
         run: |
