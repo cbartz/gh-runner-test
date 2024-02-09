@@ -9,12 +9,9 @@ jobs:
     steps:
       - run: |
           sudo snap install openstack --channel 2023.1
-          sunbeam prepare-node-script | bash -x && newgrp snap_daemon
-          groups
-          exec newgrp snap_daemon
-          groups
-          sunbeam cluster bootstrap --accept-defaults
-          sunbeam configure --accept-defaults --openrc demo-openrc
-          sunbeam openrc > admin-openrc
+          sunbeam prepare-node-script | bash -x
+          sudo -g snap_daemon sunbeam cluster bootstrap --accept-defaults
+          sudo -g snap_daemon configure --accept-defaults --openrc demo-openrc
+          sudo -g snap_daemon sunbeam openrc > admin-openrc
           . admin-openrc
           openstack user list
