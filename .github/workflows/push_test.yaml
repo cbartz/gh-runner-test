@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-event-tests:
-    runs-on: [self-hosted, linux, x64]
+    runs-on: ubuntu-latest
     steps:
       - name: Setup tmate session
         if: always()
