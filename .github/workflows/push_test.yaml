@@ -7,12 +7,22 @@ jobs:
   push-event-tests:
     runs-on: [self-hosted, linux, x64]
     steps:
-#      - run: sleep 7200
-      - run: |
-          sudo snap install openstack --channel 2023.1
-          sunbeam prepare-node-script | bash -x
-          sudo -g snap_daemon sunbeam cluster bootstrap --accept-defaults
-          sudo -g snap_daemon sunbeam configure --accept-defaults --openrc demo-openrc
-          sudo -g snap_daemon sunbeam openrc > admin-openrc
-          . admin-openrc
-          openstack user list
+      - uses: actions/checkout@v4.1.1
+      - name: Remove Android SDK
+        run: sudo rm -rf /usr/local/lib/android
+      - name: Setup operator environment
+        uses: charmed-kubernetes/actions-operator@main
+        with:
+          provider: lxd
+          microk8s-addons: "dns ingress rbac storage"
+          channel: latest/stable
+          juju-channel: 3.1
+      - run: sleep 7200
+#      - run: |
+#          sudo snap install openstack --channel 2023.1
+#          sunbeam prepare-node-script | bash -x
+#          sudo -g snap_daemon sunbeam cluster bootstrap --accept-defaults
+#          sudo -g snap_daemon sunbeam configure --accept-defaults --openrc demo-openrc
+#          sudo -g snap_daemon sunbeam openrc > admin-openrc
+#          . admin-openrc
+#          openstack user list
