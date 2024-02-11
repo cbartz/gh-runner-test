@@ -19,7 +19,7 @@ jobs:
 #          juju-channel: 3.2
 #      - run: sleep 7200
       - run: |
-          sudo snap install openstack --edge
+          sudo snap install openstack --channel 2023.1
           sunbeam prepare-node-script | bash -x
           sudo -g snap_daemon sunbeam cluster bootstrap --accept-defaults
           sudo -g snap_daemon sunbeam configure --accept-defaults --openrc demo-openrc
