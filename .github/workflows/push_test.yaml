@@ -15,14 +15,14 @@ jobs:
 #              df -h
 #              cat /etc/environment
 #              env
-        - name: Setup operator environment
-          uses: charmed-kubernetes/actions-operator@main
-          with:
+         - name: Setup operator environment
+           uses: charmed-kubernetes/actions-operator@main
+           with:
             channel: 1.26-strict/stable
             provider: microk8s
             juju-channel: 3.2
             microk8s-addons: "dns ingress hostpath-storage"
-        - run: |
+         - run: |
             retry() {
                 local command="$1"
                 local wait_message="$2"
