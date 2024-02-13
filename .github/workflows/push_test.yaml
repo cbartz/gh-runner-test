@@ -45,8 +45,6 @@ jobs:
                     sleep 10
                 done
             }
-#            head -n  1 /etc/environment > temp && sudo mv temp /etc/environment
-#            unset HTTP_PROXY HTTPS_PROXY NO_PROXY http_proxy https_proxy no_proxy
             sudo snap remove kubectl # microk8s charm tries to make an alias and errors otherwise
             sudo snap install openstack --channel 2023.1 --devmode
             sunbeam prepare-node-script | bash -x
