@@ -7,18 +7,10 @@ jobs:
   push-event-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Switch to root
+      - name: Echo default ip
         run: |
-            sudo -i
-      - name: Setup operator environment
-        uses: charmed-kubernetes/actions-operator@main
-        with:
-          provider: microk8s
-          microk8s-addons: dns ingress rbac storage
-          channel: 1.29-strict/stable
-          juju-channel: 3.1/stable
-          container-registry-url:  http://localhost:5000
-      - name: Echo runner name
-        run: |
-          echo "Hello, world"
+              t=$(ip route show 0.0.0.0/0 | grep -oP 'via \K\S+')
+              echo $t
+              x=$(ip route get $t | grep -oP 'src \K\S+')
+              echo $x
 
