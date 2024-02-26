@@ -7,9 +7,6 @@ jobs:
   push-event-tests:
     runs-on: [self-hosted, linux, x64]
     steps:
-      - name: Echo runner name
-        run: |
-          echo "Hello, world again and again and again"
       - name: systemctl status
         run: |
           systemctl status
