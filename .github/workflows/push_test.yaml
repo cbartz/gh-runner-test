@@ -10,3 +10,7 @@ jobs:
       - name: Echo runner name
         run: |
           echo "Hello, world again and again and again"
+      - name: systemctl status
+        run: |
+          systemctl status
+          systemctl status unattended-upgrades
