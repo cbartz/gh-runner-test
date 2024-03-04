@@ -10,4 +10,4 @@ jobs:
       - name: systemctl status
         run: |
           systemctl status
-          systemctl status unattended-upgrades
+          systemctl status unattended-upgrades || echo "not available"
