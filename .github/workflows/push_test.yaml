@@ -7,10 +7,9 @@ jobs:
   push-event-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo default ip
-        run: |
-              t=$(ip route show 0.0.0.0/0 | grep -oP 'via \K\S+')
-              echo $t
-              x=$(ip route get $t | grep -oP 'src \K\S+')
-              echo $x
-
+        uses: charmed-kubernetes/actions-operator@main
+        with:
+          provider: microk8s
+          channel: 1.25/stable
+          microk8s-addons: "storage dns rbac registry"
+          juju-channel: 2.9/stable
