@@ -7,10 +7,5 @@ jobs:
   push-event-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup action
-        uses: charmed-kubernetes/actions-operator@main
-        with:
-          provider: microk8s
-          channel: 1.25/stable
-          microk8s-addons: "storage dns rbac registry"
-          juju-channel: 2.9/stable
+      - name: Hello world
+        run: echo "Hello, world"
