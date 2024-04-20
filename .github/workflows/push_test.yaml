@@ -12,3 +12,4 @@ jobs:
           ls /home/ubuntu/metrics-exchange
           cat /home/ubuntu/metrics-exchange/pre-job-metrics.json || true
           cat /home/ubuntu/metrics-exchange/post-job-metrics.json || true
+          cat /home/ubuntu/actions-runner/pre-job.sh || true
