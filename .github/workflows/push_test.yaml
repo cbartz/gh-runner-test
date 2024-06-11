@@ -1,7 +1,7 @@
 name: Push Event Tests
 
 on:
-  push:
+  pull_request:
 
 jobs:
   push-event-tests:
@@ -10,3 +10,4 @@ jobs:
       - name: Echo runner name
         run: |
           echo "Hello, world again and again and again and again"
+          echo "around the world around the world"
