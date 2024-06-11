@@ -1,7 +1,7 @@
 name: Push Event Tests
 
 on:
-  push:
+  pull_request:
 
 jobs:
   push-event-tests:
