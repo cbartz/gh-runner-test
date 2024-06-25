@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-event-tests:
-    runs-on: []
+    runs-on: ubuntu-latest
     steps:
       - name: Hello world2
         run: echo "$HOME"
