@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-event-tests:
-    runs-on: self-hosted
+    runs-on: [self-hosted, github-runner]
     steps:
       - name: Hello world2
         run: echo "$HOME"
