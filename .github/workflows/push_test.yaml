@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-event-tests:
-    runs-on: [self-hosted, noble]
+    runs-on: [self-hosted, jammy]
     steps:
       - name: sleep for long time
         run: sleep 10000
