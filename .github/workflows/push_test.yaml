@@ -5,7 +5,7 @@ on:
 
 jobs:
   push-event-tests:
-    runs-on: [self-hosted, jammy]
+    runs-on: [self-hosted]
     steps:
-      - name: sleep for long time
-        run: sleep 10000
+      - name: hello world
+        run: echo "Hello, world"
