@@ -10,4 +10,4 @@ jobs:
       - name: hello world
         run: echo "Hello, world"
       - name: provoke a oom by allocating a lot of memory
-        run: python3 -c "a = '1'*1000000000; print(a)"
+        run: dd if=/dev/zero bs=1G count=16 2>/dev/null
