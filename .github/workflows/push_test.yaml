@@ -10,4 +10,5 @@ jobs:
       - name: hello world
         run: echo "Hello, world"
       - name: provoke a oom by allocating a lot of memory
-        run: dd if=/dev/zero bs=1G count=16 2>/dev/null
+        run: |
+         python3 -c "[x for x in xrange(2**30)]"
