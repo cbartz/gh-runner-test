@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: hello world
         run: echo "Hello, world"
-      - name: sleep 5 minutes
-        run: sleep 300
+      - name: provoke a oom by allocating a lot of memory
+        run: python3 -c "a = '1'*1000000000"
