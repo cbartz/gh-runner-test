@@ -11,4 +11,4 @@ jobs:
         run: echo "Hello, world"
       - name: provoke a oom by allocating a lot of memory
         run: |
-         python3 -c "[x for x in xrange(2**30)]"
+         python3 -c "[x for x in range(2**30)]"
