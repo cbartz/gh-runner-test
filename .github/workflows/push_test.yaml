@@ -9,5 +9,5 @@ jobs:
     steps:
       - name: hello world
         run: echo "Hello, world"
-      - name: hostnamectl command
-        run: sudo hostnamectl hostname  | grep github-runner
+      - name: sleep
+        run: sleep 600
