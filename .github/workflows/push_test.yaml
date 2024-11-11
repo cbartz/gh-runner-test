@@ -7,7 +7,9 @@ jobs:
   push-event-tests:
     runs-on: [self-hosted]
     steps:
-      - name: hello world
-        run: echo "Hello, world"
-      - name: sleep
-        run: sleep 600
+     - name: test steps
+       run: |
+          sudo snap install firefox
+          mkdir ~/bin
+          ln -s /snap/bin/firefox.geckodriver ~/bin/geckodriver
+          ~/bin/geckodriver --version
