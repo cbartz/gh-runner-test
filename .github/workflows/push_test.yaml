@@ -9,7 +9,4 @@ jobs:
     steps:
      - name: test steps
        run: |
-          sudo snap install firefox
-          mkdir ~/bin
-          ln -s /snap/bin/firefox.geckodriver ~/bin/geckodriver
-          ~/bin/geckodriver --version
+            echo "Hello, world"
