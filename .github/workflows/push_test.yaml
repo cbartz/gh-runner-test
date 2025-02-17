@@ -10,3 +10,5 @@ jobs:
      - name: test steps
        run: |
             echo "Hello, world"
+            uname -a
+
