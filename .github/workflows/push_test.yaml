@@ -6,7 +6,8 @@ jobs:
     steps:
       - name: print hardware resources
         run: |
+          echo "Running on $(uname -a)"
           echo "Hardware resources:"
-          echo "CPU: $(lscpu | grep 'Model name' | awk -F: '{print $2}')"
+          echo "CPU: $(lscpu)"
           echo "RAM: $(free -h | grep 'Mem' | awk '{print $2}')"
           echo "Disk: $(df -h / | grep '/' | awk '{print $2}')"
