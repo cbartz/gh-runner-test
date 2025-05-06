@@ -1,14 +1,12 @@
-name: Push Event Tests
-
-on:
-  push:
-
+name: CI
+on: [push]
 jobs:
-  push-event-tests:
-    runs-on: [self-hosted]
+  build:
+    runs-on: ["ubuntu-22.04-arm"]
     steps:
-     - name: test steps
-       run: |
-            echo "Hello, world"
-            uname -a
-
+      - name: print hardware resources
+        run: |
+          echo "Hardware resources:"
+          echo "CPU: $(lscpu | grep 'Model name' | awk -F: '{print $2}')"
+          echo "RAM: $(free -h | grep 'Mem' | awk '{print $2}')"
+          echo "Disk: $(df -h / | grep '/' | awk '{print $2}')"
