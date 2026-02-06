@@ -4,7 +4,7 @@ on:
 
 jobs:
   hello:
-    runs-on: [self-hosted, my-scaleset]  # adjust to match your -name/-labels
+    runs-on: my-scaleset # adjust to match your -name/-labels
     steps:
       - run: |
           echo "Hello from ScaleSet runner!"
