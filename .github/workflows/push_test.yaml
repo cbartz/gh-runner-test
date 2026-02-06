@@ -1,6 +1,6 @@
 name: Test ScaleSet Runner
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   hello:
