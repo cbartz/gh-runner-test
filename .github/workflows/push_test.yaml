@@ -12,7 +12,7 @@ jobs:
           echo "Host: $(hostname)"
 
   parallel-test:
-    runs-on: [self-hosted, my-scaleset]
+    runs-on: my-scaleset
     strategy:
       matrix:
         index: [1, 2, 3]
