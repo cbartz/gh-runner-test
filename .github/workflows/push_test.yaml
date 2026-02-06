@@ -1,13 +1,22 @@
-name: CI
-on: [push]
+name: Test ScaleSet Runner
+on:
+  workflow_dispatch:
+
 jobs:
-  build:
-    runs-on: ["ubuntu-22.04-arm"]
+  hello:
+    runs-on: [self-hosted, my-scaleset]  # adjust to match your -name/-labels
     steps:
-      - name: print hardware resources
-        run: |
-          echo "Running on $(uname -a)"
-          echo "Hardware resources:"
-          echo "CPU: $(lscpu)"
-          echo "RAM: $(free -h | grep 'Mem' | awk '{print $2}')"
-          echo "Disk: $(df -h / | grep '/' | awk '{print $2}')"
+      - run: |
+          echo "Hello from ScaleSet runner!"
+          echo "Runner: $RUNNER_NAME"
+          echo "Host: $(hostname)"
+
+  parallel-test:
+    runs-on: [self-hosted, my-scaleset]
+    strategy:
+      matrix:
+        index: [1, 2, 3]
+    steps:
+      - run: |
+          echo "Matrix job ${{ matrix.index }}"
+          sleep 10
