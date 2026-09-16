@@ -1,9 +1,0 @@
-name: envtest
-on:
-  workflow_dispatch:
-jobs:
-  probe:
-    runs-on: ubuntu-latest
-    environment: ghost-env
-    steps:
-      - run: echo "ran without any gate"
